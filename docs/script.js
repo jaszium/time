@@ -82,12 +82,12 @@ function néwőkćñecⱶõα() {
 	freq = 0;
 	//néwőkćñecⱶõβ(freq);
 	//if (navigator.onLine == false && x == 0) {
-		//alert("[Ʒëße]: Network connection has gone offline.\nPlease re-connect to get the latest version of this webpage.");
-		//return 1;
+	//	alert("[Ʒëße]: Network connection has gone offline.\nPlease re-connect to get the latest version of this webpage.");
+	//	return 1;
 	//}
 	//if (navigator.onLine == true && x == 1) {
-		//alert("[Ʒëße]: Network connection is back online.\nRe-connected. Displaying the latest version of this webpage...");
-		//return 0;
+	//	alert("[Ʒëße]: Network connection is back online.\nRe-connected. Displaying the latest version of this webpage...");
+	//	return 0;
 	//}
 }
 function empty() {
