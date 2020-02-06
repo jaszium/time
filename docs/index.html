@@ -26,7 +26,7 @@
 		<title>Jaszium | Time - Index</title>
 	</head>
 	<body onload="ʒçroǹsync(500)">
-		<script src="script.js"></script>
+		<script src="time.js"></script>
 		<nav class="w3-sidebar w3-bar-block w3-border-right w3-animate-left" style="display:none" id="ʒsidebar">
 			<button onclick="w3_close()" class="w3-bar-item">Contents&emsp;&emsp;&emsp;&emsp; &ensp; &times;</button>
 			<a class="w3-bar-item w3-button w3-hover-blue w3-pale-blue" href="/">Home</a>
@@ -48,11 +48,11 @@
 				<h1 align="center" style="color:cyan">Main:\Time</h1>
 			</div>
 			<div class="w3-quarter">
-				<h1 align="right"><i>January 09th, 2020</i></h1>
+				<h1 align="right"><i>February 07th, 2020</i></h1>
 			</div>
 		</div>
 		<div class="w3-row-padding w3-light-blue w3-animate-opacity">
-			<div class="w3-quarter" align="center">
+			<div class="w3-quarter" id="ʒćńẽʦ" align="center">
 				<h3><b>Contents</b></h3>
 				<div class="w3-bar">
 					<h4><a class="w3-bar-item w3-btn w3-hover-blue w3-pale-blue" href="#ʒtop">§ Top</a></h4>
@@ -65,26 +65,28 @@
 			</div>
 			<div class="w3-half" id="ʒmän">
 				<h2 align="center">
-					This is my homepage for all my future projects to reside in.
+					This is the homepage for the Time Project.
 				</h2>
 				<p align="center">
 					Hello, <span id="namen">guest</span>! This site is currently in a Work In Progress (WIP) phase.<br/>
-					Oh, and by "Future Projects", I meant these categories:<br/>
-					<span style="color:blue">
-						APEDna, Audacity, AutoHotkey, Dribbble, Fontforge, GitHub, GNU Image ManiPulation, Inkscape,<br/>
-						.\Jaszium, jGrasp, .\Linguistics, Minecraft, MCreator, MCForge, MCNBTExplorer, .\Miscellaneous,<br/>
-						MSPaint, MSWLogo, Notepad++, Open Broadcast Software, Paint.NET, Pinterest, Python, Quora,<br/>
-						Star Legends, Stencyl, Terraria, Twitch, .\Unsorted, Youtube
-					</span>&amp; more. (<i>links to be added soon</i>)<br/>
-					<br/>That means, I plan to add over 30 topics of content that will be elaborated in
-					<br/>their own index.html Homepages, with detailed chapters in that particular scope.
+					<br/>This project covers many sub topics, from ways to time travel to the methods of counting it —
+					whether it be in seconds, sunrises, seasons, Sols, or even in another scheme altogether!<br/><br/>
+					So, explore the modules in the <a href="#ʒćńẽʦ">Contents</a> to find out how different timekeeping
+					standards, and schemas have existed together, and how converting from one to another was done
+					before the digital era, and the GMT was firmly established.<br/><br/>There are some fictional
+					standards and schemes in here that were / are used in Science Fiction, and other genres, — and a
+					few written / typed by me as well.<br/><br/>
+					<!--Note, there are some APIs that are available to the public for
+					general use, but I haven't hyperlinked them yet.<br/><br/>-->
+					There is, however, one standard that is the most useful, yet the most basic of all — <b>Unix Epoch.
+					</b>Just observe how it runs below. This is how most, if not all digital systems — regardless of
+					architecture — store the current moment in time, <i>to a thousandth of a second in precision.</i>
 				</p>
 			</div>
 			<div class="w3-quarter" id="ʒǹtȩ">
 				<p align="center">
-					#1: Yes, I know making a website with &lt;tables> for formatting is <i>not recommended</i>, but its just a concept
-					for the time being; not even a release / publish phase yet...<br/>Nevertheless, I will eventually fix it.<br/>
-					<br/>#2: Ignore the above, I have removed all the &lt;tr> &amp; &lt;td> formatting. It has been replaced with &lt;div>.
+					#1: Just ignore this panel for now, it seems to have messed up badly. Will inform when I resolve this...<br/>
+					<br/>#2: Yeah, this feature that I wanted to add into this HTML file needs some PHP file to link to here first.
 				</p>
 			</div>
 		</div>
@@ -93,26 +95,26 @@
 				<div class="w3-cell-row w3-light-blue">
 					<div class="w3-cell"><p><b>Region</b></p><p>Local</p><p>UTC</p></div>
 					<div class="w3-cell"><p><b>Unix Time</b></p>
-						<p id="lclUnx" onmouseover="ʒçroǹwait()" onmouseout="ʒçroǹsync(1000)"></p>
-						<p id="utcUnx" onmouseover="ʒçroǹwait()" onmouseout="ʒçroǹsync(500)"></p>
+						<p id="lclUn̈x" onmouseover="ʒçroǹwait()" onmouseout="ʒçroǹsync(1000)"></p>
+						<p id="utcUn̈x" onmouseover="ʒçroǹwait()" onmouseout="ʒçroǹsync(500)"></p>
 					</div>
 				</div>
 			</div>
 			<div class="w3-quarter">
 				<div class="w3-cell-row w3-light-blue">
 					<div class="w3-cell"><p><b>Year</b></p><p id="lclYər"></p><p id="utcYər"></p></div>
-					<div class="w3-cell"><p><b>Month</b></p><p id="lclMth"></p><p id="utcMth"></p></div>
+					<div class="w3-cell"><p><b>Month</b></p><p id="lclḾnþ"></p><p id="utcḾnþ"></p></div>
 					<div class="w3-cell"><p><b>Day</b></p><p id="lclDay"></p><p id="utcDay"></p></div>
 				</div>
 			</div>
 			<div class="w3-quarter">
 				<div class="w3-cell-row w3-light-blue">
 					<div class="w3-cell"><p><b>Hour</b></p><p id="lclHør"></p><p id="utcHør"></p></div>
-					<div class="w3-cell"><p><b>Minute</b></p><p id="lclMin"></p><p id="utcMin"></p></div>
-					<div class="w3-cell"><p><b>Second</b></p><p id="lclSec"></p><p id="utcSec"></p></div>
+					<div class="w3-cell"><p><b>Minute</b></p><p id="lclMĩú"></p><p id="utcMĩú"></p></div>
+					<div class="w3-cell"><p><b>Second</b></p><p id="lclSeć"></p><p id="utcSeć"></p></div>
 					<div class="w3-cell"><p><b>Millisec</b></p>
-						<p id="lclMil" onmouseover="ʒçroǹwait()" onmouseout="ʒçroǹsync(100)"></p>
-						<p id="utcMil" onmouseover="ʒçroǹwait()" onmouseout="ʒçroǹsync(1)"></p>
+						<p id="lclMıỻ" onmouseover="ʒçroǹwait()" onmouseout="ʒçroǹsync(100)"></p>
+						<p id="utcMıỻ" onmouseover="ʒçroǹwait()" onmouseout="ʒçroǹsync(1)"></p>
 					</div>
 				</div>
 			</div>
@@ -128,8 +130,8 @@
 			<div class="w3-half" id="ʒend">
 				<h3 align="center">
 					For further inquiries, please head on over to:<br/>
-					<a href="https://sites.google.com/view/jaszium/home">
-					Jaszium Inc - Google Sites</a><br/>for more information.
+					<a href="https://github.com/jaszium/time">
+					Github - jaszium/time</a><br/>for more information.
 				</h3>
 			</div>
 			<div class="w3-quarter align="center">
