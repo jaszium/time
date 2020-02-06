@@ -36,33 +36,32 @@ function ʒchronos() {
 	néwőkćñecⱶõα(); //set update frequency
 	var d = new Date();
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-	var greenwich = new Intl.DateTimeFormat(Intl.DateTimeFormat().resolvedOptions().locale, { timeZone: 'UTC' });
+	var meridian = new Intl.DateTimeFormat(Intl.DateTimeFormat().resolvedOptions().locale, { timeZone: 'UTC' });
+	var tz_diff = d.getTimezoneOffset()
 	
-	var l = Date.now().toString();
-	document.getElementById("lclUnx").innerHTML = l[0] + ", " + l[1] + l[2] + l[3] + 
-	", " + l[4] + l[5] + l[6] + ", " + l[7] + l[8] + l[9] + "." + l[10] + l[11] + l[12];
+	var l = Date.now().toString(); // l = local time (+8)
+	document.getElementById("lclUn̈x").innerHTML = l[0]+", "+l[1]+l[2]+l[3]+", "+l[4]+l[5]+l[6]+", "+l[7]+l[8]+l[9]+"."+l[10]+l[11]+l[12];
 	document.getElementById("lclYər").innerHTML = d.getFullYear();
-	document.getElementById("lclMth").innerHTML = d.getMonth() + " / " + months[8]; //months[d.getMonth()]
+	document.getElementById("lclḾnþ").innerHTML = d.getMonth() + 1 + " / " + months[d.getMonth()]
 	document.getElementById("lclDay").innerHTML = ʒzeropad(d.getDate());
 	document.getElementById("lclHør").innerHTML = ʒzeropad(d.getHours());
-	document.getElementById("lclMin").innerHTML = ʒzeropad(d.getMinutes());
-	document.getElementById("lclSec").innerHTML = ʒzeropad(d.getSeconds());
-	document.getElementById("lclMil").innerHTML = ʒmsecpad(d.getMilliseconds());
+	document.getElementById("lclMĩú").innerHTML = ʒzeropad(d.getMinutes());
+	document.getElementById("lclSeć").innerHTML = ʒzeropad(d.getSeconds());
+	document.getElementById("lclMıỻ").innerHTML = ʒmsecpad(d.getMilliseconds());
 	document.getElementById("lclTzN").innerHTML = Intl.DateTimeFormat().resolvedOptions().timeZone;
-	document.getElementById("lclTzI").innerHTML = d.getTimezoneOffset()/60 + ":00";
+	document.getElementById("lclTzI").innerHTML = "+" + ((tz_diff-tz_diff)-tz_diff)/60 + ":00";
 	
-	var u = (Date.now()+(d.getTimezoneOffset()*60*1000)).toString();
-	document.getElementById("utcUnx").innerHTML = u[0] + ", " + u[1] + u[2] + u[3] + 
-	", " + u[4] + u[5] + u[6] + ", " + u[7] + u[8] + u[9] + "." + u[10] + u[11] + u[12];
+	var u = (Date.now()+(tz_diff*60*1000)).toString(); // u = utc time (±0)
+	document.getElementById("utcUn̈x").innerHTML = u[0]+", "+u[1]+u[2]+u[3]+", "+u[4]+u[5]+u[6]+", "+u[7]+u[8]+u[9]+"."+u[10]+u[11]+u[12];
 	document.getElementById("utcYər").innerHTML = d.getUTCFullYear();
-	document.getElementById("utcMth").innerHTML = d.getUTCMonth() + " / " + months[d.getUTCMonth()];
+	document.getElementById("utcḾnþ").innerHTML = d.getUTCMonth() + 1 + " / " + months[d.getUTCMonth()];
 	document.getElementById("utcDay").innerHTML = ʒzeropad(d.getUTCDate());
 	document.getElementById("utcHør").innerHTML = ʒzeropad(d.getUTCHours());
-	document.getElementById("utcMin").innerHTML = ʒzeropad(d.getUTCMinutes());
-	document.getElementById("utcSec").innerHTML = ʒzeropad(d.getUTCSeconds());
-	document.getElementById("utcMil").innerHTML = ʒmsecpad(d.getUTCMilliseconds());
-	document.getElementById("utcTzN").innerHTML = greenwich.resolvedOptions().timeZone;
-	document.getElementById("utcTzI").innerHTML = "±" + (d.getTimezoneOffset()-d.getTimezoneOffset())/60 + ":00";
+	document.getElementById("utcMĩú").innerHTML = ʒzeropad(d.getUTCMinutes());
+	document.getElementById("utcSeć").innerHTML = ʒzeropad(d.getUTCSeconds());
+	document.getElementById("utcMıỻ").innerHTML = ʒmsecpad(d.getUTCMilliseconds());
+	document.getElementById("utcTzN").innerHTML = meridian.resolvedOptions().timeZone;
+	document.getElementById("utcTzI").innerHTML = "±" + (tz_diff-tz_diff)/60 + ":00";
 	
 	//document.getElementById("utcTzN").innerHTML = Intl.DateTimeFormat().resolvedOptions().locale; //en-GB
 	//document.getElementById("utcTzN").innerHTML = Intl.DateTimeFormat().resolvedOptions().calendar; //gregory
